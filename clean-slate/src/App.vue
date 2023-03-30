@@ -1,8 +1,5 @@
 <template>
   <HomePage/>
-  <AboutPage/>
-  <ServicesPage/>
-  <ContactPage/>
 </template>
 
 <script>
