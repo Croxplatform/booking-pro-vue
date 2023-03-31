@@ -499,15 +499,8 @@
 </template>
 
 <script>
-import AboutPage from './AboutPage.vue'
-import ContactPage from './ContactPage.vue'
-import ServicesPage from './ServicesPage.vue'
-
 export default {
   name: 'HomePage',
-  components: {
-    AboutPage, ServicesPage, ContactPage
-  }
 }
 </script>
 

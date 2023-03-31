@@ -1,14 +1,15 @@
 <template>
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
             <div class="container-fluid page-header-inner py-5">
                 <div class="container text-center pb-5">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Booking</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
                         </ol>
                     </nav>
                 </div>
@@ -63,37 +64,31 @@
     <!-- Booking End -->
 
 
-    <!-- Contact Start -->
+    <!-- Booking Start -->
     <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">Contact Us</h6>
-                    <h1 class="mb-5"><span class="text-primary text-uppercase">Contact</span> For Any Query</h1>
+                    <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>
+                    <h1 class="mb-5">Book A <span class="text-primary text-uppercase">Luxury Room</span></h1>
                 </div>
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="row gy-4">
-                            <div class="col-md-4">
-                                <h6 class="section-title text-start text-primary text-uppercase">Booking</h6>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i>book@example.com</p>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style="margin-top: 25%;">
                             </div>
-                            <div class="col-md-4">
-                                <h6 class="section-title text-start text-primary text-uppercase">General</h6>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</p>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg">
                             </div>
-                            <div class="col-md-4">
-                                <h6 class="section-title text-start text-primary text-uppercase">Technical</h6>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i>tech@example.com</p>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                        <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                            frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
-                    </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
                             <form>
                                 <div class="row g-3">
@@ -109,20 +104,56 @@
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
+                                    <div class="col-md-6">
+                                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+                                            <label for="checkin">Check In</label>
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating date" id="date4" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                            <label for="checkout">Check Out</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="select1">
+                                              <option value="1">Adult 1</option>
+                                              <option value="2">Adult 2</option>
+                                              <option value="3">Adult 3</option>
+                                            </select>
+                                            <label for="select1">Select Adult</label>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="select2">
+                                              <option value="1">Child 1</option>
+                                              <option value="2">Child 2</option>
+                                              <option value="3">Child 3</option>
+                                            </select>
+                                            <label for="select2">Select Child</label>
+                                          </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                            <label for="message">Message</label>
+                                            <select class="form-select" id="select3">
+                                              <option value="1">Room 1</option>
+                                              <option value="2">Room 2</option>
+                                              <option value="3">Room 3</option>
+                                            </select>
+                                            <label for="select3">Select A Room</label>
+                                          </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                            <label for="message">Special Request</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
                                     </div>
                                 </div>
                             </form>
@@ -131,16 +162,17 @@
                 </div>
             </div>
     </div>
-    <!-- Contact End -->
-    
+    <!-- Booking End -->
+
 </template>
 
 <script>
-    export default {
-    name: 'ContactPage',
-    }
+export default {
+    name: 'BookingPage',
+}
 </script>
 
-
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>

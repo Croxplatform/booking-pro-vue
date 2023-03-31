@@ -8,7 +8,7 @@ import BookingPage from '../views/BookingPage.vue'
 const routes = [
     {
         path: '/',
-        name: 'HomePage',
+        name: 'Home',
         component: HomePage
     },
     {
@@ -18,17 +18,17 @@ const routes = [
     },
     {
         path: '/services',
-        name: 'ServicesPage',
+        name: 'Services',
         component: ServicesPage
     },
     {
         path: '/contact',
-        name: 'ContactPage',
+        name: 'Contact',
         component: ContactPage
     },
     {
         path: '/booking',
-        name: 'BookingPage',
+        name: 'Booking',
         component: BookingPage
     }
 ]
