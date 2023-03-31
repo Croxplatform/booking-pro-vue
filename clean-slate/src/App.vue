@@ -39,11 +39,11 @@
                       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                           <div class="navbar-nav mr-auto py-0">
                               <router-link to="/" class="nav-item nav-link active">Home</router-link>
-                              <router-link to="/about" class="nav-item nav-link">About</router-link>
-                              <router-link to="/about" class="nav-item nav-link">Services</router-link>
-                              <router-link to="/about" class="nav-item nav-link">Contact</router-link>
+                              <router-link :to="{ name: 'About' }" class="nav-item nav-link">About</router-link>
+                              <router-link to="/services" class="nav-item nav-link">Services</router-link>
+                              <router-link to="/contact" class="nav-item nav-link">Contact</router-link>
                           </div>
-                          <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Book Now<i class="fa fa-arrow-right ms-3"></i></a>
+                          <router-link to="/booking" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Book Now<i class="fa fa-arrow-right ms-3"></i></router-link>
                       </div>
                   </nav>
               </div>
