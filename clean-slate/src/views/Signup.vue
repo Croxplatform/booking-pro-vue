@@ -47,8 +47,20 @@
                                 <div class="row g-3">
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
+                                            <input type="number" class="form-control" id="idnum" placeholder="Your Name">
+                                            <label for="name">ID Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="fname" placeholder="Your Name">
+                                            <label for="name">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lname" placeholder="Your Name">
+                                            <label for="name">Last Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -58,15 +70,26 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <div class="form-floating date" id="password" data-target-input="nearest">
                                             <input type="password" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
                                             <label for="checkin">Password</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="form-floating date" id="date4" data-target-input="nearest">
-                                            <input type="password" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
-                                            <label for="checkout">Password Repeat</label>
+                                        <div class="form-floating date" id="phone" data-target-input="nearest">
+                                            <input type="telephone" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                            <label for="checkout">Phone Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-floating date" id="gender" data-target-input="nearest">
+                                            <select type="text" class="form-control" id="checkout" placeholder="Check Out">
+                                                <option value=""></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <label for="checkout">Gender</label>
                                         </div>
                                     </div>
                                     <div class="col-8">
