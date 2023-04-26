@@ -4,6 +4,8 @@ import AboutPage from '../views/AboutPage.vue'
 import ServicesPage from '../views/ServicesPage.vue'
 import ContactPage from '../views/ContactPage.vue'
 import BookingPage from '../views/BookingPage.vue'
+import LoginPage from '../views/Login.vue'
+import SignupPage from '../views/Signup.vue'
 
 const routes = [
     {
@@ -25,6 +27,16 @@ const routes = [
         path: '/contact',
         name: 'Contact',
         component: ContactPage
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: LoginPage
+    },
+    {
+        path: '/signup',
+        name: 'Signup',
+        component: SignupPage
     },
     {
         path: '/booking',
