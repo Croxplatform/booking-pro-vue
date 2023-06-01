@@ -89,7 +89,7 @@ export default {
     methods: {
         async login(){
             let result = await axios.get(
-                `http://ride-api.co.za:8001/api/v1/docs#/token?email=${this.email}&password=${this.password}`
+                `http://ride-api.co.za:8001/api/v1/token?email=${this.email}&password=${this.password}`
             )
             console.warn(result)
         }
