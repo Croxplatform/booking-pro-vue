@@ -47,43 +47,43 @@
                                 <div class="row g-3">
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="idnum" placeholder="Your Name">
+                                            <input type="number" class="form-control" id="idnum" placeholder="Your Name" v-model="id_number" />
                                             <label for="name">ID Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="fname" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="fname" placeholder="Your Name" v-model="name" />
                                             <label for="name">First Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="lname" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="lname" placeholder="Your Name" v-model="surname" />
                                             <label for="name">Last Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email" v-model="email" />
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="form-floating date" id="password" data-target-input="nearest">
-                                            <input type="password" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+                                        <div class="form-floating date" data-target-input="nearest">
+                                            <input type="password" class="form-control datetimepicker-input" id="password" placeholder="Check In" v-model="password" />
                                             <label for="checkin">Password</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="form-floating date" id="phone" data-target-input="nearest">
-                                            <input type="telephone" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                        <div class="form-floating date" data-target-input="nearest">
+                                            <input type="telephone" class="form-control datetimepicker-input" id="phone" placeholder="Check Out" v-model="phone" />
                                             <label for="checkout">Phone Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="form-floating date" id="gender" data-target-input="nearest">
-                                            <select type="text" class="form-control" id="checkout" placeholder="Check Out">
+                                        <div class="form-floating date" data-target-input="nearest">
+                                            <select class="form-control" id="gender" placeholder="Check Out" v-model="gender">
                                                 <option value=""></option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
@@ -112,21 +112,41 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'Signup',
     data()
     {
         return{
+            id_number: '',
+            name: '',
+            surname: '',
             email: '',
-            password: ''
+            password: '',
+            phone: '',
+            gender: '',
         }
     },
     methods: {
         async signUp(){
-            let result = await axios.get(
-                `http://ride-api.co.za:8001/api/v1/docs#/user/create_user_user__post?email=${this.email}&password=${this.password}`
-            )
-            console.warn(result)
+            let result = await axios.post(
+                "http://ride-api.co.za:8001/api/v1/user", {
+                    id_number:this.id_number,
+                    name:this.name,
+                    surname:this.surname,
+                    email:this.email,
+                    password:this.password,
+                    phone:this.phone,
+                    gender:this.gender
+                }
+            );
+
+            console.warn(result);
+
+            if (result.status==201) {
+                alert("Account created successfully!");
+            }
         }
     }
 }
