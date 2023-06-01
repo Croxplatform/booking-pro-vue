@@ -43,7 +43,7 @@
                                 <router-link :to="{ name: 'Services' }" class="nav-item nav-link">Services</router-link>
                                 <router-link :to="{ name: 'Contact' }" class="nav-item nav-link">Contact</router-link>
                             </div>
-                            <router-link :to="{ name: 'Booking' }" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Book Now<i class="fa fa-arrow-right ms-3"></i></router-link>
+                            <router-link :to="{ name: 'Login' }" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Book Now<i class="fa fa-arrow-right ms-3"></i></router-link>
                         </div>
                     </nav>
                 </div>
