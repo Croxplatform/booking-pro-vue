@@ -144,7 +144,7 @@ export default {
 
             console.warn(result);
 
-            if (result.status==201) {
+            if (result.status==200) {
                 alert("Account created successfully!");
             }
         }
