@@ -16,7 +16,6 @@
     </div>
     <!-- Page Header End -->
 
-
     <!-- Signup Start -->
     <div class="container-xxl py-5">
             <div class="container">
@@ -71,7 +70,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating date" data-target-input="nearest">
-                                            <input type="password" class="form-control datetimepicker-input" id="password" placeholder="Check In" v-model="password" />
+                                            <input type="password" autocomplete="new-password" class="form-control datetimepicker-input" id="password" placeholder="Check In" v-model="password" />
                                             <label for="checkin">Password</label>
                                         </div>
                                     </div>
@@ -93,7 +92,7 @@
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <button class="btn btn-primary w-100 py-3" type="submit" v-on:click="signUp">Signup</button>
+                                        <button class="btn btn-primary w-100 py-3" v-on:click="signUp">Signup</button>
                                     </div>
                                     <div class="col-8">
                                         <router-link :to="{ name: 'Login' }" class="nav-item nav-link active">I have an account</router-link>
@@ -112,43 +111,44 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
     name: 'Signup',
-    data()
-    {
-        return{
+    data() {
+        return {
             id_number: '',
             name: '',
             surname: '',
             email: '',
             password: '',
             phone: '',
-            gender: '',
-        }
+            gender: ''
+        };
     },
     methods: {
-        async signUp(){
-            let result = await axios.post(
-                "http://ride-api.co.za:8001/api/v1/user", {
-                    id_number:this.id_number,
-                    name:this.name,
-                    surname:this.surname,
-                    email:this.email,
-                    password:this.password,
-                    phone:this.phone,
-                    gender:this.gender
-                }
-            );
+    signUp() {
+      const userData = {
+        id_number: this.id_number,
+        name: this.name,
+        surname: this.surname,
+        email: this.email,
+        password: this.password,
+        phone: this.phone,
+        gender: this.gender
+      };
 
-            console.warn(result);
-
-            if (result.status==200) {
-                alert("Account created successfully!");
-            }
-        }
+      axios.post('http://ride-api.co.za:8001/api/v1/user/', userData)
+        .then(response => {
+          console.log(response.data);
+          // Perform any success actions, e.g., redirect to a success page
+        })
+        .catch(error => {
+          console.error(error);
+          // Handle error, e.g., display an error message to the user
+        });
     }
+  }
 }
 </script>
 
