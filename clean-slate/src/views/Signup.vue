@@ -46,43 +46,43 @@
                                 <div class="row g-3">
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="idnum" placeholder="Your Name" v-model="id_number" />
+                                            <input type="number" class="form-control" id="idnum" placeholder="Your Name" v-model="id_number" required/>
                                             <label for="name">ID Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="fname" placeholder="Your Name" v-model="name" />
+                                            <input type="text" class="form-control" id="fname" placeholder="Your Name" v-model="name" required/>
                                             <label for="name">First Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="lname" placeholder="Your Name" v-model="surname" />
+                                            <input type="text" class="form-control" id="lname" placeholder="Your Name" v-model="surname" required/>
                                             <label for="name">Last Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email" v-model="email" />
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email" v-model="email" required/>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating date" data-target-input="nearest">
-                                            <input type="password" autocomplete="new-password" class="form-control datetimepicker-input" id="password" placeholder="Check In" v-model="password" />
+                                            <input type="password" autocomplete="new-password" class="form-control datetimepicker-input" id="password" placeholder="Check In" v-model="password" required/>
                                             <label for="checkin">Password</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating date" data-target-input="nearest">
-                                            <input type="telephone" class="form-control datetimepicker-input" id="phone" placeholder="Check Out" v-model="phone" />
+                                            <input type="telephone" class="form-control datetimepicker-input" id="phone" placeholder="Check Out" v-model="phone" required/>
                                             <label for="checkout">Phone Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-floating date" data-target-input="nearest">
-                                            <select class="form-control" id="gender" placeholder="Check Out" v-model="gender">
+                                            <select class="form-control" id="gender" placeholder="Check Out" v-model="gender" required>
                                                 <option value=""></option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
@@ -142,10 +142,14 @@ export default {
         .then(response => {
           console.log(response.data);
           // Perform any success actions, e.g., redirect to a success page
+          alert('Signup successful. Please log in.');
+
+          this.$router.push('/login');
         })
         .catch(error => {
           console.error(error);
           // Handle error, e.g., display an error message to the user
+          alert('Signup failed. Please try again.');
         });
     }
   }
