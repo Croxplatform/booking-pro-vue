@@ -16,7 +16,6 @@
     </div>
     <!-- Page Header End -->
 
-
     <!-- Login Start -->
     <div class="container-xxl py-5">
             <div class="container">
@@ -76,26 +75,62 @@
 
 </template>
 
-<script>
-export default {
-    name: 'Login',
-    data()
-    {
-        return{
-            email: '',
-            password: ''
-        }
-    },
-    methods: {
-        async login(){
-            let result = await axios.get(
-                `http://ride-api.co.za:8001/api/v1/token?email=${this.email}&password=${this.password}`
-            )
-            console.warn(result)
-        }
-    }
 
-}
+<script>
+import axios from 'axios';
+
+export default {
+  name: 'Login',
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
+  },
+  methods: {
+    login() {
+      const searchParams = {
+        email: this.email,
+        password: this.password
+      };
+
+      axios.get('http://ride-api.co.za:8001/api/v1/user/list/all', { params: searchParams })
+        .then(response => {
+          const user = response.data;
+          if (user) {
+            const userId = user.id;
+            const endpoint = `http://ride-api.co.za:8001/api/v1/user/${userId}`;
+            const userData = {
+              password: this.password
+            };
+
+            axios.get(endpoint, userData)
+              .then(response => {
+                console.log(response.data);
+                // Perform any success actions, e.g., store authentication token, redirect to dashboard
+                alert('Signup successful. Please log in.');
+
+                this.$router.push('/login');
+              })
+              .catch(error => {
+                console.error(error);
+                // Handle error, e.g., display an error message to the user
+              });
+          } else {
+            // User not found
+            console.log('Invalid credentials');
+            // Handle error, e.g., display an error message to the user
+            alert('Signin failed. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          // Handle error, e.g., display an error message to the user
+          alert('Signin failed. Please try again.');
+        });
+    }
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
