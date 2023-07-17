@@ -112,9 +112,16 @@
 
 <script>
 import axios from 'axios';
+import useVuelidate from '@vuelidate/core'
+import { required, email, minLength } from '@vuelidate/validators'
 
 export default {
     name: 'Signup',
+
+    setup() {
+        return { v$: useVuelidate() }
+    },
+
     data() {
         return {
             id_number: '',
@@ -126,6 +133,44 @@ export default {
             gender: ''
         };
     },
+
+    validations() {
+        return {
+            id_number: { 
+                required, name_validation: {
+                    $validator: validName,
+                    $message: 'Invalid Name. Valid name only contain numbers, dashes (-) and spaces'
+                } 
+            },
+            name: { 
+                required, name_validation: {
+                    $validator: validName,
+                    $message: 'Invalid Name. Valid name only contain letters, dashes (-) and spaces'
+                } 
+            },
+            surname: { 
+                required, name_validation: {
+                    $validator: validName,
+                    $message: 'Invalid Name. Valid name only contain letters, dashes (-) and spaces'
+                } 
+            },
+            email: {
+                required, email
+            },
+            password: {
+                required, 
+                min: minLength(8)
+            },
+            phone: {
+                required, 
+                min: minLength(10)
+            },
+            gender: {
+
+            },
+        }
+    },
+
     methods: {
     signUp() {
       const userData = {
