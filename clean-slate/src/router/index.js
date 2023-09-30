@@ -6,6 +6,7 @@ import ContactPage from '../views/ContactPage.vue'
 import BookingPage from '../views/BookingPage.vue'
 import LoginPage from '../views/Login.vue'
 import SignupPage from '../views/Signup.vue'
+import WelcomePage from '../views/WelcomePage.vue'
 
 const routes = [
     {
@@ -42,7 +43,13 @@ const routes = [
         path: '/booking',
         name: 'Booking',
         component: BookingPage
+    },
+    {
+        path: '/welcome',
+        name: 'Welcome',
+        component: WelcomePage
     }
+
 ]
 
 const router = createRouter({
